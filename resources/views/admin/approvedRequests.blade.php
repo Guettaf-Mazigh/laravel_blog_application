@@ -20,7 +20,11 @@
               <div class="d-flex gap-2">
                 <form action="#" method="POST">
                   @csrf
-                  <button type="submit" class="btn btn-primary">Show Blogs</button>
+                  <button type="submit" class="btn btn-primary">Show activities</button>
+                </form>
+                <form action="{{route('remove.author',['userId' => $request->user_id,'requestId' => $request->id])}}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn btn-danger">Remove author</button>
                 </form>
               </div>
             </td>

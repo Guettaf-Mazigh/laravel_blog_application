@@ -13,6 +13,7 @@ Route::middleware(['auth','adminRole'])->group(function(){
     Route::post('/admin/accept/request/{requestID}/{userId}',[AdminController::class,'acceptRequest'])->name('accept.request');
     Route::post('store/rejected/{requestId}',[AdminController::class,'storeRejectedRequests'])->name('store.rejected.requests');
     Route::post('store/approved/{requestId}',[AdminController::class,'storeApprovedRequests'])->name('store.approved.requests');
+    Route::post('delete/author/{userId}/{requestId}',[AdminController::class,'removeAuthor'])->name('remove.author');
 });
 
 Route::controller(UserController::class)->group(function(){

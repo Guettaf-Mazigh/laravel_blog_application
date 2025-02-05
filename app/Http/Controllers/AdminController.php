@@ -49,4 +49,10 @@ class AdminController extends Controller
         AuthorRequest::findOrFail($requestId)->update(['status' => 'approved']);
         return redirect()->back()->with('success','You approved a request');
     }
+
+    public function removeAuthor($userId,$resquestId){
+        User::findOrFail($userId)->update(['role'=>'lector']);
+        AuthorRequest::findOrFail($resquestId)->delete();
+        return redirect()->back()->with('success','You delete an author');
+    }
 }

@@ -19,7 +19,7 @@
             <div class="d-flex gap-2">
               <form action="#" method="POST">
                 @csrf
-                <button type="submit" class="btn btn-danger">Delet Request</button>
+                <button type="submit" class="btn btn-primary">Show Activities</button>
               </form>
              
             </div>
